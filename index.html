@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mega Costruzioni Srl · Condomini e piscine a Caserta</title>
+<meta name="description" content="Mega Costruzioni Srl, impresa edile a Caserta: rifacimento facciate e lavori condominiali, costruzione e ristrutturazione di piscine. Sopralluogo e preventivo su richiesta.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#111418">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mega Costruzioni Srl · Condomini e piscine a Caserta">
+<meta property="og:description" content="Facciate, parti comuni, impermeabilizzazioni e piscine su misura. 5,0 su Google.">
+<meta property="og:url" content="https://gsfglobal.github.io/mega-costruzioni-demo/">
+<meta property="og:image" content="https://gsfglobal.github.io/mega-costruzioni-demo/img/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.webp">
+<style>
+:root{
+  --ink:#111418; --ink-2:#1b2027; --ink-3:#262c35;
+  --paper:#f3f1ec; --paper-2:#e8e5de; --line:#d8d3c8;
+  --muted:#6b6f76; --muted-d:#9aa0a8;
+  --amber:#f2a900; --amber-d:#c98c00;
+  --pool:#16a6c9; --pool-d:#0b6f8a;
+  --r:18px; --max:1200px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:Inter,system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;font-size:17px;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,.display{font-family:Archivo,Inter,sans-serif;letter-spacing:-.02em;line-height:1.05}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+.eyebrow{font-family:Archivo;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-d);display:inline-flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:currentColor}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font:600 16px Inter;padding:15px 24px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:transform .2s var(--ease),background .2s,box-shadow .2s;min-height:52px}
+.btn:hover{transform:translateY(-2px)}
+.btn-amber{background:var(--amber);color:var(--ink);box-shadow:0 10px 30px -10px rgba(242,169,0,.7)}
+.btn-amber:hover{background:#ffbb1a}
+.btn-ghost{background:rgba(255,255,255,.08);color:#fff;border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* demo bar */
+.demo-bar{background:var(--amber);color:var(--ink);font-size:13.5px;text-align:center;padding:7px 14px;font-weight:500}
+.demo-bar b{font-weight:700}
+
+/* header */
+header.top{position:sticky;top:0;z-index:50;background:rgba(17,20,24,.82);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);color:#fff;border-bottom:1px solid rgba(255,255,255,.07)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:70px;gap:18px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+.logo-mark{width:40px;height:40px;border-radius:10px;background:var(--amber);display:grid;place-items:center}
+.logo-mark svg{width:26px;height:26px}
+.logo-txt{font-family:Archivo;font-weight:900;font-size:19px;letter-spacing:-.01em;line-height:1}
+.logo-txt small{display:block;font:600 10.5px Inter;letter-spacing:.2em;color:var(--muted-d);margin-top:3px}
+nav.main{display:flex;gap:28px;font-size:15px}
+nav.main a{text-decoration:none;color:#cfd3d8;transition:color .2s}
+nav.main a:hover{color:#fff}
+.top .btn{padding:10px 18px;min-height:44px;font-size:15px}
+.burger{display:none;background:none;border:0;color:#fff;width:44px;height:44px;cursor:pointer}
+@media(max-width:900px){nav.main{display:none}.top .call-txt{display:none}.burger{display:block}}
+.mnav{position:fixed;inset:0;z-index:60;background:var(--ink);color:#fff;display:none;flex-direction:column;padding:90px 28px 30px;gap:6px}
+.mnav.open{display:flex}
+.mnav a{font-family:Archivo;font-weight:800;font-size:32px;text-decoration:none;padding:10px 0;border-bottom:1px solid var(--ink-3)}
+.mnav .close{position:absolute;top:18px;right:18px;background:none;border:0;color:#fff;width:48px;height:48px;font-size:30px;cursor:pointer}
+.mnav .btn{margin-top:22px}
+
+/* hero */
+.hero{position:relative;min-height:calc(100svh - 104px);display:flex;align-items:flex-end;color:#fff;overflow:hidden;background:var(--ink)}
+.hero-bg{position:absolute;inset:-6% 0 0;background:url(img/hero.webp) center/cover;transform:scale(1.08);will-change:transform}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,20,24,.35) 0%,rgba(17,20,24,.55) 45%,rgba(17,20,24,.96) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-top:90px;padding-bottom:70px;width:100%}
+.hero h1{font-size:clamp(42px,7.6vw,100px);font-weight:900;max-width:14ch;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{font-size:clamp(17px,1.6vw,20px);max-width:560px;color:#d9dce0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-meta{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.15);font-size:15px;color:#cfd3d8}
+.hero-meta div{display:flex;align-items:center;gap:10px}
+.stars{color:var(--amber);letter-spacing:2px;font-size:17px}
+.hero .eyebrow{color:var(--amber)}
+.reveal-line{display:block;overflow:hidden}
+.reveal-line>span{display:block;transform:translateY(105%);animation:up .9s var(--ease) forwards}
+.reveal-line:nth-child(2)>span{animation-delay:.12s}
+@keyframes up{to{transform:none}}
+.fade-in{opacity:0;animation:fi 1s .45s var(--ease) forwards}
+@keyframes fi{to{opacity:1}}
+
+/* marquee */
+.marquee{background:var(--amber);color:var(--ink);overflow:hidden;white-space:nowrap;padding:16px 0;font-family:Archivo;font-weight:800;font-size:clamp(18px,2.2vw,26px);text-transform:uppercase;letter-spacing:-.01em}
+.marquee .track{display:inline-flex;gap:38px;animation:mq 38s linear infinite;padding-left:38px}
+.marquee span::after{content:"✦";margin-left:38px;font-size:.7em;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+section{padding:110px 0;scroll-margin-top:70px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-size:clamp(34px,4.6vw,60px);font-weight:900;margin-top:14px}
+.sec-head p{color:var(--muted);max-width:480px;justify-self:end}
+@media(max-width:820px){.sec-head{grid-template-columns:1fr}.sec-head p{justify-self:start}section{padding:80px 0}}
+
+/* due anime */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:820px){.duo{grid-template-columns:1fr}}
+.duo-card{position:relative;border-radius:var(--r);overflow:hidden;min-height:520px;color:#fff;display:flex;align-items:flex-end;text-decoration:none;isolation:isolate}
+.duo-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.duo-card::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,transparent 30%,rgba(10,12,15,.92))}
+.duo-card.pool::before{background:linear-gradient(180deg,transparent 30%,rgba(4,40,52,.94))}
+.duo-card:hover img{transform:scale(1.06)}
+.duo-body{padding:34px}
+.duo-body .tag{display:inline-block;font:700 12px Archivo;letter-spacing:.16em;text-transform:uppercase;background:var(--amber);color:var(--ink);padding:6px 11px;border-radius:6px}
+.duo-card.pool .tag{background:var(--pool);color:#fff}
+.duo-body h3{font-size:clamp(30px,3.4vw,44px);font-weight:900;margin:16px 0 10px}
+.duo-body p{color:#d6dade;max-width:440px}
+.duo-body .more{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-weight:600}
+
+/* condomini */
+.dark{background:var(--ink);color:#fff}
+.dark .sec-head p{color:var(--muted-d)}
+.dark .eyebrow{color:var(--amber)}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink-3);border:1px solid var(--ink-3);border-radius:var(--r);overflow:hidden}
+@media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.svc-grid{grid-template-columns:1fr}}
+.svc{background:var(--ink);padding:34px 30px;transition:background .3s}
+.svc:hover{background:var(--ink-2)}
+.svc .n{font:800 14px Archivo;color:var(--amber)}
+.svc h3{font-size:23px;font-weight:800;margin:18px 0 10px}
+.svc p{color:var(--muted-d);font-size:15.5px}
+.ico{width:46px;height:46px;border-radius:12px;background:rgba(242,169,0,.12);display:grid;place-items:center;color:var(--amber);margin-top:16px}
+.ico svg{width:24px;height:24px}
+
+.split{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:center;margin-top:90px}
+@media(max-width:900px){.split{grid-template-columns:1fr;gap:36px}}
+.split-img{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5}
+.split-img img{width:100%;height:100%;object-fit:cover}
+.split-img .badge{position:absolute;left:18px;bottom:18px;background:rgba(17,20,24,.85);backdrop-filter:blur(8px);padding:14px 18px;border-radius:14px;font-size:14px;max-width:260px}
+.split h3{font-size:clamp(30px,3.4vw,44px);font-weight:900;margin:14px 0 18px}
+.split p.lead{color:var(--muted-d);margin-bottom:26px}
+.steps{list-style:none;display:grid;gap:4px}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:14px;padding:18px 0;border-top:1px solid var(--ink-3)}
+.steps li b{font-family:Archivo;font-size:28px;font-weight:900;color:var(--amber);line-height:1}
+.steps li h4{font-family:Archivo;font-size:18px;font-weight:800;margin-bottom:4px}
+.steps li p{color:var(--muted-d);font-size:15px}
+
+/* piscine */
+.pool-sec{background:linear-gradient(180deg,#e9f6fa 0%,var(--paper) 100%);position:relative;overflow:hidden}
+.pool-sec .eyebrow{color:var(--pool-d)}
+.pool-stage{position:relative;border-radius:24px;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,#0f4f63 0%,#062633 70%);height:min(72vh,620px);min-height:420px;color:#fff;box-shadow:0 40px 80px -40px rgba(6,38,51,.6)}
+#pool3d{position:absolute;inset:0;width:100%;height:100%;display:block;touch-action:pan-y}
+.pool-fallback{position:absolute;inset:0;background:url(img/piscina-villa.webp) center/cover;display:none}
+.pool-stage.no3d .pool-fallback{display:block}
+.pool-overlay{position:absolute;left:0;right:0;bottom:0;padding:30px;display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;background:linear-gradient(180deg,transparent,rgba(3,22,30,.85));pointer-events:none}
+.pool-overlay h3{font-size:clamp(26px,3vw,40px);font-weight:900;max-width:16ch}
+.pool-overlay .hint{font-size:13px;color:#bfe3ee;display:flex;align-items:center;gap:8px}
+.pool-chips{position:absolute;top:22px;left:22px;display:flex;gap:8px;flex-wrap:wrap;z-index:3}
+.pool-chips button{font:600 13.5px Inter;padding:9px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.08);color:#fff;cursor:pointer;backdrop-filter:blur(6px);min-height:40px}
+.pool-chips button.on{background:#fff;color:var(--pool-d);border-color:#fff}
+.pool-tag{position:absolute;top:22px;right:22px;font-size:12px;color:#bfe3ee;background:rgba(0,0,0,.25);padding:6px 10px;border-radius:8px;z-index:3}
+.pool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:40px}
+@media(max-width:900px){.pool-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.pool-grid{grid-template-columns:1fr}}
+.pcard{background:#fff;border-radius:16px;padding:26px;border:1px solid #d6ebf1}
+.pcard .ico{background:#e1f4f9;color:var(--pool-d);margin:0 0 16px}
+.pcard h4{font-family:Archivo;font-size:19px;font-weight:800;margin-bottom:6px}
+.pcard p{font-size:15px;color:var(--muted)}
+.pool-photos{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-top:20px}
+.pool-photos figure{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:16/10}
+.pool-photos img{width:100%;height:100%;object-fit:cover}
+@media(max-width:700px){.pool-photos{grid-template-columns:1fr}}
+figcaption.ill{position:absolute;right:10px;bottom:10px;font-size:11px;background:rgba(0,0,0,.5);color:#fff;padding:3px 8px;border-radius:6px}
+
+/* lavori gallery */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:150px;gap:14px}
+.gallery figure{position:relative;border-radius:14px;overflow:hidden}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.gallery figure:hover img{transform:scale(1.05)}
+.g1{grid-column:span 7;grid-row:span 3}.g2{grid-column:span 5;grid-row:span 2}.g3{grid-column:span 5;grid-row:span 2}.g4{grid-column:span 4;grid-row:span 2}.g5{grid-column:span 3;grid-row:span 2}
+@media(max-width:760px){.gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px}.g1{grid-column:span 2;grid-row:span 2}.g2,.g3,.g4,.g5{grid-column:span 1;grid-row:span 2}}
+.gallery .cap{position:absolute;left:12px;bottom:12px;background:rgba(17,20,24,.78);color:#fff;font-size:13px;padding:6px 10px;border-radius:8px;backdrop-filter:blur(6px)}
+.note{font-size:13.5px;color:var(--muted);margin-top:16px}
+
+/* reviews */
+.reviews{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:center;background:#fff;border-radius:24px;padding:56px;border:1px solid var(--line)}
+@media(max-width:820px){.reviews{grid-template-columns:1fr;padding:34px}}
+.score{font-family:Archivo;font-weight:900;font-size:clamp(90px,12vw,150px);line-height:.9;letter-spacing:-.05em}
+.score small{font-size:.32em;color:var(--muted);letter-spacing:0}
+.reviews .stars{font-size:26px;margin:10px 0 6px}
+.reviews ul{list-style:none;display:grid;gap:14px;margin:22px 0 28px}
+.reviews li{display:flex;gap:12px;align-items:flex-start}
+.reviews li svg{width:22px;height:22px;color:var(--amber-d);flex:none;margin-top:2px}
+
+/* form */
+.quote{background:var(--ink);color:#fff;border-radius:28px;overflow:hidden;display:grid;grid-template-columns:1fr 1.1fr}
+@media(max-width:900px){.quote{grid-template-columns:1fr}}
+.quote-side{padding:54px;background:linear-gradient(160deg,rgba(17,20,24,.6),rgba(17,20,24,.95)),url(img/balconi.webp) center/cover}
+.quote-side h2{font-size:clamp(32px,4vw,52px);font-weight:900;margin:14px 0 18px}
+.quote-side p{color:#cdd1d6}
+.contact-list{list-style:none;margin-top:34px;display:grid;gap:14px}
+.contact-list a{display:flex;align-items:center;gap:14px;text-decoration:none;font-weight:600;font-size:18px}
+.contact-list .ci{width:48px;height:48px;border-radius:14px;background:rgba(255,255,255,.1);display:grid;place-items:center}
+.contact-list svg{width:22px;height:22px}
+form.qf{padding:54px;display:grid;gap:16px}
+@media(max-width:600px){form.qf,.quote-side{padding:30px 22px}}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg label{position:relative}
+.seg input{position:absolute;opacity:0}
+.seg span{display:flex;align-items:center;justify-content:center;text-align:center;padding:14px 8px;border-radius:12px;border:1px solid var(--ink-3);background:var(--ink-2);cursor:pointer;font-weight:600;font-size:15px;min-height:52px;transition:.2s}
+.seg input:checked+span{background:var(--amber);color:var(--ink);border-color:var(--amber)}
+.seg input:focus-visible+span{outline:2px solid #fff;outline-offset:2px}
+.fl{display:grid;gap:7px;font-size:14px;color:#b9bec5;font-weight:500}
+.fl input,.fl textarea,.fl select{font:16px Inter;background:var(--ink-2);border:1px solid var(--ink-3);color:#fff;border-radius:12px;padding:14px 15px;width:100%;min-height:52px}
+.fl textarea{min-height:110px;resize:vertical}
+.fl input:focus,.fl textarea:focus,.fl select:focus{outline:none;border-color:var(--amber)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:520px){.row2{grid-template-columns:1fr}}
+.priv{display:flex;gap:10px;font-size:13.5px;color:#9aa0a8;align-items:flex-start}
+.priv input{width:20px;height:20px;margin-top:2px;accent-color:var(--amber);flex:none}
+.form-msg{font-size:14px;color:#ffcf66;min-height:20px}
+
+/* area */
+.area{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:820px){.area{grid-template-columns:1fr}}
+.area h2{font-size:clamp(32px,4vw,50px);font-weight:900;margin:14px 0 16px}
+.area p{color:var(--muted)}
+.towns{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.towns span{background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:14.5px}
+.map{border-radius:20px;overflow:hidden;border:1px solid var(--line);aspect-ratio:4/3;background:var(--paper-2)}
+.map iframe{width:100%;height:100%;border:0;display:block}
+.map-ph{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-size:15px}
+
+footer{background:var(--ink);color:#b9bec5;padding:60px 0 110px;font-size:14.5px}
+footer .grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}
+@media(max-width:760px){footer .grid{grid-template-columns:1fr}}
+footer h4{font-family:Archivo;color:#fff;font-size:16px;margin-bottom:12px}
+footer a{color:#e3e6ea;text-decoration:none}
+footer ul{list-style:none;display:grid;gap:8px}
+.legal{border-top:1px solid var(--ink-3);margin-top:40px;padding-top:22px;font-size:13px;color:#7d838b}
+
+/* floating */
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 14px 30px -8px rgba(0,0,0,.4);transition:transform .2s}
+.fab:hover{transform:scale(1.07)}
+.fab svg{width:30px;height:30px}
+.mbar{display:none}
+@media(max-width:700px){
+  .fab{display:none}
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(17,20,24,.94);backdrop-filter:blur(10px)}
+  .mbar a{min-height:50px;font-size:15px;padding:12px}
+}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.reveal-line>span{transform:none}.fade-in{opacity:1}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+</style>
+</head>
+<body>
+
+<div class="demo-bar"><b>Proposta dimostrativa</b> · non è il sito ufficiale di Mega Costruzioni Srl · foto illustrative</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Mega Costruzioni, inizio pagina">
+      <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5 26V9l6 6 5-9 5 9 6-6v17" stroke="#111418" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></svg></span>
+      <span class="logo-txt">MEGA<small>COSTRUZIONI SRL</small></span>
+    </a>
+    <nav class="main" aria-label="Menu principale">
+      <a href="#condomini">Condomini</a>
+      <a href="#piscine">Piscine</a>
+      <a href="#lavori">Lavori</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#preventivo">Preventivo</a>
+    </nav>
+    <div style="display:flex;gap:8px;align-items:center">
+      <a class="btn btn-amber" href="tel:+393508960982"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="call-txt">350 896 0982</span></a>
+      <button class="burger" aria-label="Apri menu" aria-expanded="false" id="burger"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+
+<div class="mnav" id="mnav" role="dialog" aria-modal="true" aria-label="Menu">
+  <button class="close" id="mclose" aria-label="Chiudi menu">×</button>
+  <a href="#condomini">Condomini</a>
+  <a href="#piscine">Piscine</a>
+  <a href="#lavori">Lavori</a>
+  <a href="#recensioni">Recensioni</a>
+  <a href="#preventivo">Preventivo</a>
+  <a class="btn btn-amber" href="https://wa.me/393508960982?text=Buongiorno%2C%20vorrei%20un%20preventivo">Scrivici su WhatsApp</a>
+</div>
+
+<main id="top">
+
+<section class="hero" style="padding:0">
+  <div class="hero-bg" id="heroBg" role="img" aria-label="Facciata di un palazzo con ponteggio durante i lavori (foto illustrativa)"></div>
+  <div class="wrap">
+    <span class="eyebrow fade-in">Impresa edile · Caserta</span>
+    <h1><span class="reveal-line"><span>Condomini rinnovati.</span></span><span class="reveal-line"><span><em>Piscine</em> su misura.</span></span></h1>
+    <p class="lead fade-in">Facciate, parti comuni e impermeabilizzazioni per i condomini, e piscine costruite da zero o rimesse a nuovo. Un unico referente, dal sopralluogo alla consegna.</p>
+    <div class="hero-cta fade-in">
+      <a class="btn btn-amber" href="#preventivo">Richiedi un sopralluogo</a>
+      <a class="btn btn-ghost" href="https://wa.me/393508960982?text=Buongiorno%2C%20vorrei%20informazioni%20per%20un%20lavoro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.2z"/></svg>WhatsApp</a>
+    </div>
+    <div class="hero-meta fade-in">
+      <div><span class="stars" aria-hidden="true">★★★★★</span><span><b>5,0</b> su Google · 13 recensioni</span></div>
+      <div>Condomini · Piscine · Ristrutturazioni</div>
+      <div>Caserta e provincia</div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track">
+  <span>Facciate</span><span>Cappotto termico</span><span>Lastrici solari</span><span>Balconi</span><span>Parti comuni</span><span>Piscine in cemento armato</span><span>Rivestimenti</span><span>Ristrutturazioni</span>
+  <span>Facciate</span><span>Cappotto termico</span><span>Lastrici solari</span><span>Balconi</span><span>Parti comuni</span><span>Piscine in cemento armato</span><span>Rivestimenti</span><span>Ristrutturazioni</span>
+</div></div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow">Cosa facciamo</span><h2>Due specialità, un'unica impresa.</h2></div>
+      <p>Lavoriamo per amministratori, condomìni e privati. Che sia un palazzo da rimettere a nuovo o una piscina in giardino, il metodo è lo stesso: sopralluogo, preventivo chiaro, cantiere ordinato.</p>
+    </div>
+    <div class="duo">
+      <a class="duo-card rv" href="#condomini">
+        <img src="img/facciata-operai.webp" alt="Operai su un ponteggio lungo la facciata di un palazzo (foto illustrativa)" loading="lazy">
+        <div class="duo-body"><span class="tag">Condomini</span><h3>Facciate e parti comuni</h3><p>Rifacimento facciate, balconi, coperture e impermeabilizzazioni, con il cantiere gestito senza disagi per chi ci abita.</p><span class="more">Scopri i lavori condominiali →</span></div>
+      </a>
+      <a class="duo-card pool rv" href="#piscine">
+        <img src="img/piscina-villa.webp" alt="Piscina in un giardino privato (foto illustrativa)" loading="lazy">
+        <div class="duo-body"><span class="tag">Piscine</span><h3>Piscine su misura</h3><p>Dalla progettazione allo scavo, dalla struttura ai rivestimenti: la piscina che hai in mente, adatta al tuo spazio.</p><span class="more">Scopri le piscine →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="dark" id="condomini">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow">Lavori condominiali</span><h2>Il palazzo torna a nuovo. Chi ci vive, quasi non se ne accorge.</h2></div>
+      <p>Ponteggi in sicurezza, avvisi ai condòmini, aree di cantiere delimitate e pulite ogni giorno. E un referente che risponde all'amministratore.</p>
+    </div>
+    <div class="svc-grid rv">
+      <div class="svc"><span class="n">01</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/></svg></div><h3>Rifacimento facciate</h3><p>Ripristino di intonaci e calcestruzzo, tinteggiatura e trattamenti protettivi delle superfici esterne.</p></div>
+      <div class="svc"><span class="n">02</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21V8l9-5 9 5v13"/><path d="M7 21V11h10v10"/><path d="M7 15h10"/></svg></div><h3>Cappotto termico</h3><p>Isolamento esterno dell'edificio per case più calde d'inverno, più fresche d'estate e bollette più leggere.</p></div>
+      <div class="svc"><span class="n">03</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></svg></div><h3>Lastrici e terrazzi</h3><p>Impermeabilizzazione di lastrici solari, terrazzi e coperture per fermare infiltrazioni e umidità.</p></div>
+      <div class="svc"><span class="n">04</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 10h18M5 10v9M19 10v9M9 10v9M15 10v9M3 19h18"/></svg></div><h3>Balconi e frontalini</h3><p>Messa in sicurezza e ripristino di frontalini, cielini e parapetti ammalorati.</p></div>
+      <div class="svc"><span class="n">05</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20h4v-4h4v-4h4V8h4"/></svg></div><h3>Scale e parti comuni</h3><p>Androni, vani scala, cortili e pavimentazioni esterne: gli spazi di tutti, finalmente in ordine.</p></div>
+      <div class="svc"><span class="n">06</span><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><h3>Ristrutturazioni</h3><p>Lavori edili interni ed esterni per appartamenti, ville e locali commerciali.</p></div>
+    </div>
+
+    <div class="split">
+      <div class="split-img rv">
+        <img src="img/palazzo.webp" alt="Palazzo con facciata tinteggiata e persiane verdi (foto illustrativa)" loading="lazy">
+        <div class="badge"><b>Per gli amministratori</b><br>Preventivo dettagliato voce per voce, pronto da portare in assemblea.</div>
+      </div>
+      <div class="rv">
+        <span class="eyebrow">Come lavoriamo</span>
+        <h3>Dal sopralluogo alla consegna, in quattro passi.</h3>
+        <p class="lead">Niente sorprese a metà lavori: sai prima cosa si fa, quanto costa e quando finisce.</p>
+        <ol class="steps">
+          <li><b>1</b><div><h4>Sopralluogo</h4><p>Veniamo sul posto, vediamo lo stato dell'edificio e ascoltiamo le esigenze del condominio.</p></div></li>
+          <li><b>2</b><div><h4>Preventivo chiaro</h4><p>Ogni lavorazione descritta e quantificata, con i tempi previsti.</p></div></li>
+          <li><b>3</b><div><h4>Cantiere ordinato</h4><p>Ponteggi in sicurezza, avvisi ai residenti, aggiornamenti costanti all'amministratore.</p></div></li>
+          <li><b>4</b><div><h4>Consegna</h4><p>Verifica finale insieme e pulizia completa delle aree di lavoro.</p></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pool-sec" id="piscine">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow">Piscine</span><h2>La piscina che avevi in mente. Costruita per durare.</h2></div>
+      <p>Interrate in cemento armato, con la forma e le finiture che preferisci. Seguiamo scavo, struttura, impermeabilizzazione, rivestimento e bordi.</p>
+    </div>
+
+    <div class="pool-stage rv" id="poolStage">
+      <canvas id="pool3d" aria-label="Modello 3D interattivo di una piscina"></canvas>
+      <div class="pool-fallback" role="img" aria-label="Piscina in un giardino (foto illustrativa)"></div>
+      <div class="pool-chips" role="group" aria-label="Colore del rivestimento">
+        <button class="on" data-tile="#3fb7d6">Mosaico azzurro</button>
+        <button data-tile="#e9e4d8">Pietra chiara</button>
+        <button data-tile="#4a5a63">Grigio ardesia</button>
+      </div>
+      <span class="pool-tag">Modello 3D dimostrativo</span>
+      <div class="pool-overlay">
+        <h3>Scegli il rivestimento, guarda il risultato.</h3>
+        <span class="hint"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 13V5a2 2 0 1 1 4 0v6M12 11V4a2 2 0 1 1 4 0v7M16 11V7a2 2 0 1 1 4 0v8a7 7 0 0 1-7 7h-1a7 7 0 0 1-6-3.4L3.5 14a2 2 0 0 1 3.4-2L8 13.5"/></svg>Trascina per ruotare</span>
+      </div>
+    </div>
+
+    <div class="pool-grid">
+      <div class="pcard rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10h14v11M9 21v-6h6v6"/></svg></div><h4>Progetto</h4><p>Forma, misure e posizione studiate sul tuo giardino.</p></div>
+      <div class="pcard rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M3 12h18M9 6v12M15 6v12"/></svg></div><h4>Struttura</h4><p>Vasca in cemento armato, impermeabilizzata a regola d'arte.</p></div>
+      <div class="pcard rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2M2 17c2 0 2-2 4-2s2 2 4 2 2-2 4-2 2 2 4 2 2-2 4-2"/></svg></div><h4>Finiture</h4><p>Mosaico, pietra, bordi e solarium a scelta.</p></div>
+      <div class="pcard rv"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 7 9 18l-5-5"/></svg></div><h4>Rinnovo</h4><p>Piscine esistenti rimesse a nuovo: perdite, rivestimenti, bordi.</p></div>
+    </div>
+
+    <div class="pool-photos">
+      <figure class="rv"><img src="img/piscina-giardino.webp" alt="Piscina in un giardino curato davanti a una villa (foto illustrativa)" loading="lazy"><figcaption class="ill">Foto illustrativa</figcaption></figure>
+      <figure class="rv"><img src="img/piscina.webp" alt="Piscina con bordo in pietra e vista sulle montagne (foto illustrativa)" loading="lazy"><figcaption class="ill">Foto illustrativa</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="lavori">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><span class="eyebrow">Lavori</span><h2>Cantieri che si vedono.</h2></div>
+      <p>In questa sezione andranno le foto dei vostri cantieri, con il prima e il dopo di ogni intervento.</p>
+    </div>
+    <div class="gallery">
+      <figure class="g1 rv"><img src="img/hero.webp" alt="Ponteggio lungo la facciata di un palazzo (foto illustrativa)" loading="lazy"><span class="cap">Rifacimento facciata</span></figure>
+      <figure class="g2 rv"><img src="img/balconi.webp" alt="Operai al lavoro sui balconi di un condominio (foto illustrativa)" loading="lazy"><span class="cap">Balconi e frontalini</span></figure>
+      <figure class="g3 rv"><img src="img/piscina-villa.webp" alt="Piscina privata (foto illustrativa)" loading="lazy"><span class="cap">Piscina privata</span></figure>
+      <figure class="g4 rv"><img src="img/residenza.webp" alt="Complesso residenziale (foto illustrativa)" loading="lazy"><span class="cap">Complesso residenziale</span></figure>
+      <figure class="g5 rv"><img src="img/ponteggio.webp" alt="Operaio su un ponteggio (foto illustrativa)" loading="lazy"><span class="cap">Sicurezza in quota</span></figure>
+    </div>
+    <p class="note">Le foto di questa anteprima sono illustrative e non ritraggono lavori di Mega Costruzioni.</p>
+  </div>
+</section>
+
+<section id="recensioni" style="padding-top:0">
+  <div class="wrap">
+    <div class="reviews rv">
+      <div>
+        <span class="eyebrow">Recensioni Google</span>
+        <div class="score" style="margin-top:18px">5,0<small> / 5</small></div>
+        <div class="stars" aria-label="5 stelle su 5">★★★★★</div>
+        <p style="color:var(--muted)">Media delle 13 recensioni su Google</p>
+      </div>
+      <div>
+        <h2 style="font-size:clamp(28px,3.4vw,42px);font-weight:900">Il passaparola migliore è un cliente soddisfatto.</h2>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 7 9 18l-5-5"/></svg><span>Tutte le recensioni a cinque stelle</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 7 9 18l-5-5"/></svg><span>Recensioni recenti, lasciate dai clienti</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 7 9 18l-5-5"/></svg><span>Qui potranno comparire i commenti dei clienti, con il loro consenso</span></li>
+        </ul>
+        <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&query=Mega+Costruzioni+Srl+Caserta" target="_blank" rel="noopener">Leggi le recensioni su Google</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="preventivo" style="padding-top:0">
+  <div class="wrap">
+    <div class="quote rv">
+      <div class="quote-side">
+        <span class="eyebrow">Preventivo</span>
+        <h2>Raccontaci il lavoro. Ti richiamiamo noi.</h2>
+        <p>Compila il modulo: si apre WhatsApp con il messaggio già pronto da inviare. Oppure chiamaci direttamente.</p>
+        <ul class="contact-list">
+          <li><a href="tel:+393508960982"><span class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>350 896 0982</a></li>
+          <li><a href="https://wa.me/393508960982" target="_blank" rel="noopener"><span class="ci"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg></span>Scrivici su WhatsApp</a></li>
+        </ul>
+      </div>
+      <form class="qf" id="qf" novalidate>
+        <div class="fl" role="radiogroup" aria-label="Tipo di lavoro">Tipo di lavoro
+          <div class="seg">
+            <label><input type="radio" name="tipo" value="Lavori condominiali" checked><span>Condominio</span></label>
+            <label><input type="radio" name="tipo" value="Piscina"><span>Piscina</span></label>
+            <label><input type="radio" name="tipo" value="Ristrutturazione"><span>Altro</span></label>
+          </div>
+        </div>
+        <div class="row2">
+          <label class="fl">Nome e cognome<input name="nome" autocomplete="name" required></label>
+          <label class="fl">Comune<input name="comune" placeholder="Es. Caserta" autocomplete="address-level2"></label>
+        </div>
+        <label class="fl">Sei…<select name="chi"><option>Amministratore di condominio</option><option>Condòmino</option><option selected>Privato</option><option>Azienda</option></select></label>
+        <label class="fl">Descrivi brevemente il lavoro<textarea name="msg" placeholder="Es. rifacimento facciata di un palazzo di 5 piani, oppure piscina 8×4 in giardino"></textarea></label>
+        <label class="priv"><input type="checkbox" name="ok" required><span>Ho letto l'informativa privacy e acconsento a essere ricontattato per il preventivo.</span></label>
+        <div class="form-msg" id="fmsg" role="status" aria-live="polite"></div>
+        <button class="btn btn-amber" type="submit">Invia su WhatsApp</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap area">
+    <div class="rv">
+      <span class="eyebrow">Dove lavoriamo</span>
+      <h2>Caserta e provincia.</h2>
+      <p>Sopralluoghi in città e nei comuni della provincia. Per lavori fuori zona, chiedici pure.</p>
+      <div class="towns"><span>Caserta</span><span>Marcianise</span><span>Maddaloni</span><span>Santa Maria Capua Vetere</span><span>Aversa</span><span>San Nicola la Strada</span><span>Capua</span></div>
+    </div>
+    <div class="map rv" id="map"><div class="map-ph">La mappa con la sede comparirà qui<br>dopo aver confermato l'indirizzo.</div></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M5 26V9l6 6 5-9 5 9 6-6v17" stroke="#111418" stroke-width="3.2" stroke-linejoin="round" stroke-linecap="round"/></svg></span><span class="logo-txt" style="color:#fff">MEGA<small>COSTRUZIONI SRL</small></span></a>
+        <p style="margin-top:16px;max-width:340px">Impresa edile a Caserta. Lavori condominiali, piscine e ristrutturazioni.</p>
+      </div>
+      <div><h4>Contatti</h4><ul><li><a href="tel:+393508960982">350 896 0982</a></li><li><a href="https://wa.me/393508960982" target="_blank" rel="noopener">WhatsApp</a></li><li>Caserta (CE)</li></ul></div>
+      <div><h4>Sezioni</h4><ul><li><a href="#condomini">Condomini</a></li><li><a href="#piscine">Piscine</a></li><li><a href="#lavori">Lavori</a></li><li><a href="#preventivo">Preventivo</a></li></ul></div>
+    </div>
+    <div class="legal">© <span id="y"></span> Mega Costruzioni Srl · P.IVA da inserire · Informativa privacy e cookie da completare<br>Proposta dimostrativa: non è il sito ufficiale. Foto illustrative da Pexels (licenza libera).</div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/393508960982?text=Buongiorno%2C%20vorrei%20un%20preventivo" target="_blank" rel="noopener" aria-label="Scrivici su WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.8-1.2.2-.6.2-1.1.1-1.2l-.5-.2z"/></svg></a>
+<div class="mbar"><a class="btn btn-ghost" href="tel:+393508960982">Chiama</a><a class="btn btn-amber" href="#preventivo">Preventivo</a></div>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+// menu mobile
+(function(){const m=document.getElementById('mnav'),b=document.getElementById('burger');
+function set(o){m.classList.toggle('open',o);b.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''}
+b.onclick=()=>set(true);document.getElementById('mclose').onclick=()=>set(false);m.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>set(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')set(false)})})();
+// reveal
+(function(){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+'ms';io.observe(el)})})();
+// parallax hero
+(function(){const bg=document.getElementById('heroBg');if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;let t=false;
+addEventListener('scroll',()=>{if(t)return;t=true;requestAnimationFrame(()=>{const y=Math.min(scrollY,900);bg.style.transform='translateY('+y*.25+'px) scale(1.08)';t=false})},{passive:true})})();
+// form -> WhatsApp
+document.getElementById('qf').addEventListener('submit',function(e){e.preventDefault();const f=new FormData(this),msg=document.getElementById('fmsg');
+if(!f.get('nome').trim()){msg.textContent='Inserisci il tuo nome.';this.nome.focus();return}
+if(!f.get('ok')){msg.textContent='Per continuare spunta il consenso privacy.';return}
+const t='Buongiorno Mega Costruzioni, vorrei un preventivo.\n\nTipo di lavoro: '+f.get('tipo')+'\nSono: '+f.get('chi')+'\nNome: '+f.get('nome').trim()+(f.get('comune').trim()?'\nComune: '+f.get('comune').trim():'')+(f.get('msg').trim()?'\n\nDettagli: '+f.get('msg').trim():'');
+msg.textContent='Si apre WhatsApp con il messaggio pronto: premi invio per mandarlo.';
+window.open('https://wa.me/393508960982?text='+encodeURIComponent(t),'_blank','noopener')});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script>
+addEventListener('DOMContentLoaded',function(){
+const stage=document.getElementById('poolStage'),cv=document.getElementById('pool3d');
+function fallback(){stage.classList.add('no3d')}
+function start(){
+ if(!window.THREE){fallback();return}
+ let r;try{r=new THREE.WebGLRenderer({canvas:cv,antialias:true,alpha:true})}catch(e){fallback();return}
+ r.setPixelRatio(Math.min(devicePixelRatio,2));r.shadowMap.enabled=true;r.shadowMap.type=THREE.PCFSoftShadowMap;
+ 
+ const sc=new THREE.Scene();sc.fog=new THREE.Fog(0x062633,26,60);
+ const cam=new THREE.PerspectiveCamera(38,1,.1,100);
+ sc.add(new THREE.HemisphereLight(0xdff6ff,0x3a4a3a,.55));
+ const sun=new THREE.DirectionalLight(0xfff1d6,.85);sun.position.set(8,14,6);sun.castShadow=true;sun.shadow.mapSize.set(1024,1024);
+ Object.assign(sun.shadow.camera,{left:-14,right:14,top:14,bottom:-14});sc.add(sun);
+ // texture piastrelle
+ function tileTex(hex,rep){const c=document.createElement('canvas');c.width=c.height=256;const g=c.getContext('2d');
+  const base=new THREE.Color(hex);
+  for(let y=0;y<8;y++)for(let x=0;x<8;x++){const k=.9+Math.random()*.18;g.fillStyle='#'+base.clone().multiplyScalar(k).getHexString();g.fillRect(x*32,y*32,32,32)}
+  g.strokeStyle='rgba(255,255,255,.45)';g.lineWidth=2;for(let i=0;i<=8;i++){g.beginPath();g.moveTo(i*32,0);g.lineTo(i*32,256);g.stroke();g.beginPath();g.moveTo(0,i*32);g.lineTo(256,i*32);g.stroke()}
+  const t=new THREE.CanvasTexture(c);t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep[0],rep[1]);return t}
+ const L=10,W=5,D=1.6;
+ const tileMats=[];
+ function wall(w,h,rep){const m=new THREE.MeshStandardMaterial({map:tileTex('#3fb7d6',rep),roughness:.35});tileMats.push(m);return new THREE.Mesh(new THREE.PlaneGeometry(w,h),m)}
+ const pool=new THREE.Group();sc.add(pool);
+ const floor=wall(L,W,[L*1.5,W*1.5]);floor.rotation.x=-Math.PI/2;floor.position.y=-D;floor.receiveShadow=true;pool.add(floor);
+ const w1=wall(L,D,[L*1.5,D*1.5]);w1.position.set(0,-D/2,-W/2);pool.add(w1);
+ const w2=wall(L,D,[L*1.5,D*1.5]);w2.position.set(0,-D/2,W/2);w2.rotation.y=Math.PI;pool.add(w2);
+ const w3=wall(W,D,[W*1.5,D*1.5]);w3.position.set(-L/2,-D/2,0);w3.rotation.y=Math.PI/2;pool.add(w3);
+ const w4=wall(W,D,[W*1.5,D*1.5]);w4.position.set(L/2,-D/2,0);w4.rotation.y=-Math.PI/2;pool.add(w4);
+ // scaletta (gradini)
+ const stepM=new THREE.MeshStandardMaterial({color:0xf2f0ea,roughness:.6});
+ for(let i=0;i<3;i++){const s=new THREE.Mesh(new THREE.BoxGeometry(.5,D-(i+1)*.42,1.6),stepM);s.position.set(-L/2+.25+i*.5,-D+(D-(i+1)*.42)/2,-W/2+1.2);s.castShadow=s.receiveShadow=true;pool.add(s)}
+ // bordo e solarium
+ const deckM=new THREE.MeshStandardMaterial({color:0xb9ad98,roughness:.9});
+ const cope=new THREE.MeshStandardMaterial({color:0xf7f5f0,roughness:.5});
+ const sh=new THREE.Shape();sh.moveTo(-9,-5.5);sh.lineTo(9,-5.5);sh.lineTo(9,6.5);sh.lineTo(-9,6.5);sh.lineTo(-9,-5.5);
+ const hole=new THREE.Path();hole.moveTo(-L/2,-W/2);hole.lineTo(-L/2,W/2);hole.lineTo(L/2,W/2);hole.lineTo(L/2,-W/2);hole.lineTo(-L/2,-W/2);sh.holes.push(hole);
+ const deck=new THREE.Mesh(new THREE.ShapeGeometry(sh),deckM);deck.rotation.x=-Math.PI/2;deck.position.y=.005;deck.receiveShadow=true;pool.add(deck);
+ const gs=new THREE.Shape();gs.moveTo(-40,-40);gs.lineTo(40,-40);gs.lineTo(40,40);gs.lineTo(-40,40);gs.lineTo(-40,-40);const gh=new THREE.Path();gh.moveTo(-9,-5.5);gh.lineTo(-9,6.5);gh.lineTo(9,6.5);gh.lineTo(9,-5.5);gh.lineTo(-9,-5.5);gs.holes.push(gh);
+ const grass=new THREE.Mesh(new THREE.ShapeGeometry(gs),new THREE.MeshStandardMaterial({color:0x48703a,roughness:1}));grass.rotation.x=-Math.PI/2;grass.receiveShadow=true;pool.add(grass);
+ [[0,-W/2-.25,L+1,.5],[0,W/2+.25,L+1,.5]].forEach(a=>{const b=new THREE.Mesh(new THREE.BoxGeometry(a[2],.12,a[3]),cope);b.position.set(a[0],.06,a[1]);b.castShadow=b.receiveShadow=true;pool.add(b)});
+ [[-L/2-.25,0],[L/2+.25,0]].forEach(a=>{const b=new THREE.Mesh(new THREE.BoxGeometry(.5,.12,W),cope);b.position.set(a[0],.06,a[1]);b.castShadow=b.receiveShadow=true;pool.add(b)});
+ // lettini
+ const lm=new THREE.MeshStandardMaterial({color:0xffffff,roughness:.7}),lf=new THREE.MeshStandardMaterial({color:0x2b2f36,roughness:.5});
+ for(let i=0;i<3;i++){const g=new THREE.Group();const bed=new THREE.Mesh(new THREE.BoxGeometry(.8,.12,2),lm);bed.position.y=.35;const back=new THREE.Mesh(new THREE.BoxGeometry(.8,.12,.8),lm);back.position.set(0,.6,-1.05);back.rotation.x=.9;const base=new THREE.Mesh(new THREE.BoxGeometry(.7,.3,1.8),lf);base.position.y=.15;
+  [bed,back,base].forEach(m=>{m.castShadow=true;g.add(m)});g.position.set(-2.4+i*2.4,0,W/2+2.4);g.rotation.y=Math.PI;pool.add(g)}
+ // ombrellone
+ const pole=new THREE.Mesh(new THREE.CylinderGeometry(.05,.05,2.6),lf);pole.position.set(4.2,1.3,W/2+2.6);pole.castShadow=true;pool.add(pole);
+ const top=new THREE.Mesh(new THREE.ConeGeometry(1.7,.55,8,1,true),new THREE.MeshStandardMaterial({color:0xe8dfcc,roughness:.85,side:THREE.DoubleSide}));top.position.set(4.2,2.6,W/2+2.6);top.castShadow=true;pool.add(top);
+ // siepe/fioriere
+ const hm=new THREE.MeshStandardMaterial({color:0x2a5630,roughness:1});
+ for(let i=0;i<7;i++){const h=new THREE.Mesh(new THREE.SphereGeometry(.9+Math.random()*.4,12,10),hm);h.position.set(-12+i*4,.6,-7.8);h.scale.y=.85;h.castShadow=true;pool.add(h)}
+ // acqua
+ const wg=new THREE.PlaneGeometry(L,W,80,40);
+ const water=new THREE.Mesh(wg,new THREE.MeshPhysicalMaterial({color:0x5fd3ee,transparent:true,opacity:.55,roughness:.05,metalness:.1,clearcoat:1,clearcoatRoughness:.05}));
+ water.rotation.x=-Math.PI/2;water.position.y=-.12;pool.add(water);
+ const pos=wg.attributes.position,base0=pos.array.slice();
+ // caustiche sul fondo
+ const caus=document.createElement('canvas');caus.width=caus.height=256;const cg=caus.getContext('2d');const ct=new THREE.CanvasTexture(caus);ct.wrapS=ct.wrapT=THREE.RepeatWrapping;ct.repeat.set(3,1.5);
+ const cMesh=new THREE.Mesh(new THREE.PlaneGeometry(L,W),new THREE.MeshBasicMaterial({map:ct,transparent:true,opacity:.35,blending:THREE.AdditiveBlending,depthWrite:false}));cMesh.rotation.x=-Math.PI/2;cMesh.position.y=-D+.01;pool.add(cMesh);
+ function drawCaus(t){cg.clearRect(0,0,256,256);cg.strokeStyle='rgba(255,255,255,.9)';cg.lineWidth=2.2;for(let i=0;i<14;i++){cg.beginPath();for(let x=0;x<=256;x+=8){const y=i*19+Math.sin(x*.05+t*1.3+i)*7+Math.sin(x*.11-t*.9)*4;x?cg.lineTo(x,y):cg.moveTo(x,y)}cg.stroke()}ct.needsUpdate=true}
+ // interazione
+ let az=-.55,el=.62,tAz=az,drag=false,px=0,auto=true;
+ cv.addEventListener('pointerdown',e=>{drag=true;px=e.clientX;auto=false;cv.setPointerCapture(e.pointerId)});
+ cv.addEventListener('pointermove',e=>{if(!drag)return;tAz-= (e.clientX-px)*.006;px=e.clientX});
+ ['pointerup','pointercancel'].forEach(n=>cv.addEventListener(n,()=>{drag=false;setTimeout(()=>auto=true,2500)}));
+ document.querySelectorAll('.pool-chips button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.pool-chips button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  tileMats.forEach(m=>{const rep=m.map.repeat.clone();m.map.dispose();m.map=tileTex(b.dataset.tile,[rep.x,rep.y]);m.needsUpdate=true});
+  water.material.color.set(b.dataset.tile==='#4a5a63'?0x3aa7b8:b.dataset.tile==='#e9e4d8'?0x7fe0ee:0x5fd3ee)}));
+ function size(){const w=stage.clientWidth,h=stage.clientHeight;r.setSize(w,h,false);cam.aspect=w/h;cam.fov=w<600?52:38;cam.updateProjectionMatrix()}
+ size();addEventListener('resize',size);
+ let vis=true;new IntersectionObserver(e=>{vis=e[0].isIntersecting}).observe(stage);
+ const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+ const clock=new THREE.Clock();let fc=0;
+ (function loop(){requestAnimationFrame(loop);if(!vis)return;const t=clock.getElapsedTime();
+  if(auto&&!reduce)tAz+=.0018;az+=(tAz-az)*.08;
+  const R=stage.clientWidth<600?19:16;cam.position.set(Math.sin(az)*R*Math.cos(el),R*Math.sin(el),Math.cos(az)*R*Math.cos(el));cam.lookAt(0,-.6,0);
+  if(!reduce){for(let i=0;i<pos.count;i++){const x=base0[i*3],y=base0[i*3+1];pos.array[i*3+2]=Math.sin(x*1.4+t*1.6)*.035+Math.cos(y*1.9+t*1.2)*.03}pos.needsUpdate=true;wg.computeVertexNormals();
+   if(fc++%2===0)drawCaus(t)}
+  r.render(sc,cam)})();
+}
+if(window.THREE)start();else{const s=document.querySelector('script[src*="three"]');s.addEventListener('load',start);s.addEventListener('error',fallback);setTimeout(()=>{if(!window.THREE)fallback()},8000)}
+});
+</script>
+</body>
+</html>
